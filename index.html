@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Component Example</title>
+    <!--
+      typically this would be versioned and on a CDN
+      when you publish an update they would have to opt-in
+      otherwise you could have an "evergreen" CDN with etags and no-cache
+    -->
+    <script src="articleContent.js" type="module"></script>
+
+    <style>
+      body { background-color: #fff; }
+      h1 { font-family: sans-serif; color: #fda100; }
+      main {
+        /* css custom properties can allow for styling of the web component
+           on a per client/implementation basis
+        */
+        --article-content-background-color: lightblue;
+        --article-content-padding: 1rem 2rem 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="text-align: center;">
+      <h1>Web Components Example</h1>
+    </header>
+    <main>
+      <div style="width: 860px; padding: 1rem 0; margin: 0 auto;">
+        This content could be loaded on any website that your CDN and API CORS policies are configured to allow.
+      </div>
+      <article-content uuid="web-components-112" locale="en"></article-content>
+    </main>
+  </body>
+</html>
